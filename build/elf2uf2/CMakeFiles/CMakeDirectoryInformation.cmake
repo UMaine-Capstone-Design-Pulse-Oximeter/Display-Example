@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "C:/VSARM/sdk/pico/pico-sdk/tools/elf2uf2")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "C:/Users/riley/Documents/blink/build/elf2uf2")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

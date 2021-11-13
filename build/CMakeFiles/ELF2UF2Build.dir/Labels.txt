@@ -1,13 +1,13 @@
 # Target labels
  ELF2UF2Build
 # Source files and their labels
-C:/Users/riley/Documents/blink/build/CMakeFiles/ELF2UF2Build
-C:/Users/riley/Documents/blink/build/CMakeFiles/ELF2UF2Build.rule
-C:/Users/riley/Documents/blink/build/CMakeFiles/ELF2UF2Build-complete.rule
-C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
-C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
-C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
-C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
-C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
-C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
-C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/CMakeFiles/ELF2UF2Build
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/CMakeFiles/ELF2UF2Build.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/CMakeFiles/ELF2UF2Build-complete.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
+C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule

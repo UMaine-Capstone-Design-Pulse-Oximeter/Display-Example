@@ -29,7 +29,7 @@
 					"linkFrameworkDirectories" : [],
 					"linkLibraries" : []
 				},
-				"path" : "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.07/bin/arm-none-eabi-gcc.exe",
+				"path" : "C:/VSARM/armcc/10 2021.10/bin/arm-none-eabi-gcc.exe",
 				"version" : "10.3.1"
 			},
 			"language" : "C",
@@ -50,7 +50,7 @@
 					"linkFrameworkDirectories" : [],
 					"linkLibraries" : []
 				},
-				"path" : "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.07/bin/arm-none-eabi-g++.exe",
+				"path" : "C:/VSARM/armcc/10 2021.10/bin/arm-none-eabi-g++.exe",
 				"version" : "10.3.1"
 			},
 			"language" : "CXX",

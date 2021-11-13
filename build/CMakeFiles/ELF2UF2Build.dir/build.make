@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\riley\Documents\blink
+CMAKE_SOURCE_DIR = C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\riley\Documents\blink\build
+CMAKE_BINARY_DIR = C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build
 
 # Utility rule file for ELF2UF2Build.
 
@@ -75,51 +75,51 @@ CMakeFiles/ELF2UF2Build-complete: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-pa
 CMakeFiles/ELF2UF2Build-complete: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
 CMakeFiles/ELF2UF2Build-complete: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build
 CMakeFiles/ELF2UF2Build-complete: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\blink\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'ELF2UF2Build'"
-	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/blink/build/CMakeFiles
-	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/blink/build/CMakeFiles/ELF2UF2Build-complete
-	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'ELF2UF2Build'"
+	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/CMakeFiles
+	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/CMakeFiles/ELF2UF2Build-complete
+	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-done
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\blink\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Performing build step for 'ELF2UF2Build'"
-	cd /d C:\Users\riley\Documents\blink\build\elf2uf2 && $(MAKE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Performing build step for 'ELF2UF2Build'"
+	cd /d C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\elf2uf2 && $(MAKE)
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure: elf2uf2/tmp/ELF2UF2Build-cfgcmd.txt
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\blink\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Performing configure step for 'ELF2UF2Build'"
-	cd /d C:\Users\riley\Documents\blink\build\elf2uf2 && "C:\Program Files\CMake\bin\cmake.exe" "-GMinGW Makefiles" C:/VSARM/sdk/pico/pico-sdk/tools/elf2uf2
-	cd /d C:\Users\riley\Documents\blink\build\elf2uf2 && "C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Performing configure step for 'ELF2UF2Build'"
+	cd /d C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\elf2uf2 && "C:\Program Files\CMake\bin\cmake.exe" "-GMinGW Makefiles" C:/VSARM/sdk/pico/pico-sdk/tools/elf2uf2
+	cd /d C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\elf2uf2 && "C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\blink\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'ELF2UF2Build'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "No download step for 'ELF2UF2Build'"
 	"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
-	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download
+	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\blink\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'ELF2UF2Build'"
-	cd /d C:\Users\riley\Documents\blink\build\elf2uf2 && "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
-	cd /d C:\Users\riley\Documents\blink\build\elf2uf2 && "C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'ELF2UF2Build'"
+	cd /d C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\elf2uf2 && "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+	cd /d C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\elf2uf2 && "C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\blink\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'ELF2UF2Build'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'ELF2UF2Build'"
 	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/VSARM/sdk/pico/pico-sdk/tools/elf2uf2
-	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/blink/build/elf2uf2
-	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/blink/build/elf2uf2
-	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/blink/build/elf2uf2/tmp
-	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp
-	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/blink/build/elf2uf2/src
-	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp
-	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir
+	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2
+	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2
+	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/tmp
+	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp
+	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src
+	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp
+	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\blink\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'ELF2UF2Build'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'ELF2UF2Build'"
 	"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
-	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch
+	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch
 
 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update: elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\blink\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No update step for 'ELF2UF2Build'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No update step for 'ELF2UF2Build'"
 	"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
-	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/blink/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update
+	"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update
 
 ELF2UF2Build: CMakeFiles/ELF2UF2Build
 ELF2UF2Build: CMakeFiles/ELF2UF2Build-complete
@@ -142,6 +142,6 @@ CMakeFiles/ELF2UF2Build.dir/clean:
 .PHONY : CMakeFiles/ELF2UF2Build.dir/clean
 
 CMakeFiles/ELF2UF2Build.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\riley\Documents\blink C:\Users\riley\Documents\blink C:\Users\riley\Documents\blink\build C:\Users\riley\Documents\blink\build C:\Users\riley\Documents\blink\build\CMakeFiles\ELF2UF2Build.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build C:\Users\riley\Documents\Umaine_Capstone_Design_Pulse_Oximiter\Display-Example\build\CMakeFiles\ELF2UF2Build.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ELF2UF2Build.dir/depend
 

@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <time.h>
+#include <math.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 
@@ -13,62 +14,81 @@
 
 #define SAMPLE_SIZE 10
 
+
 int sampledIR[SAMPLE_SIZE];
 int ACDC_IR[2];
+int sampledR[SAMPLE_SIZE];
+int ACDC_R[2];
+
+void setup_gpios(void);
+void sampleIR();
+void sampleR();
+void printArray(int arr[], int n);
+void getACDC(int arr[], int n, int color);
+double findR(int AC_IR, int DC_IR, int AC_R, int DC_R);
+void setup_gpios(void);
+int getIRVal(void);
+int getRVal(void);
 
 
 
 int main() {
-
+    //Initilize Serial port
     stdio_init_all();
- 
+    //Sleep to wait for user to load serial moniter
     sleep_ms(10000);
-
+    //Setup display and onboard led variables
     printf("configuring pins...\n");
     setup_gpios();
 
-    mathRoutine();
+    //test for ACDC function
+    //mathRoutine();
 
+    //Initilize Display
     ssd1306_t disp;
     disp.external_vcc=false;
     ssd1306_init(&disp, 128, 64, 0x3C, i2c1);
     ssd1306_clear(&disp);
 
-    
+    double R = 0;
 
-
-
-
-    
     while (true)
     {
-        
-
-
+        //Sample R and IR
         sampleIR();
+        sampleR();
 
+        printf("Sampled IR Values\n");
         printArray(sampledIR,SAMPLE_SIZE);
+        printf("Sampled RED Values\n");
+        printArray(sampledR,SAMPLE_SIZE);
 
         
-        //Store AC DC to p
+        //Calculate ACDC and R
         getACDC(sampledIR,SAMPLE_SIZE,1);
+        getACDC(sampledR,SAMPLE_SIZE,0);
+
+        printf("AC DC IR Values\n");
         printArray(ACDC_IR,2);
+        printf("AC DC RED Values\n");
+        printArray(ACDC_R,2);
+
+        R = findR(ACDC_IR[0],ACDC_IR[1],ACDC_R[0],ACDC_R[1]);
+        printf("Calculated R Value %f \n", R);
 
         printf("jumping to animation...\n");
         char buffer[15];
-        itoa(ACDC_IR[0],buffer,10);
+        
+        snprintf(buffer,15,"%f",R);
         ssd1306_draw_string(&disp, 8, 24, 2, buffer);
         ssd1306_show(&disp);
         ssd1306_clear(&disp);
-        printf("%d ", ACDC_IR[0]);
+  
         sleep_ms(25);
         
-        itoa(ACDC_IR[1],buffer,10);
-        ssd1306_draw_string(&disp, 8, 24, 2, buffer);
-        ssd1306_show(&disp);
-        ssd1306_clear(&disp);
+    
         memset(buffer, 0, 10);
-        printf("%d ", ACDC_IR[1]);
+    
         sleep_ms(25);
 
 
@@ -134,13 +154,18 @@ void getACDC(int arr[], int n, int color) //find AC (max -min) and DC (min) valu
     if(color){
         ACDC_IR[0] = r[0];
         ACDC_IR[1] = r[1];
+    } else{
+        ACDC_R[0] = r[0];
+        ACDC_R[1] = r[1];
     }
 }
 
-int findR(int AC_RED, int DC_RED, int AC_IR, int DC_IR) // Find the R value
+double findR(int AC_IR, int DC_IR, int AC_R, int DC_R) // Find the R value
 {
-  int R = (AC_RED / DC_RED) / (AC_IR / DC_IR);
-  return R;
+    double numerator = (double) AC_R / DC_R;
+    double denominator = (double) AC_IR / DC_IR;
+    double R = numerator / denominator;
+    return R;
 }
 
 float rmsValue(int arr[], int n) //find the RMS value given an arry of intigers
@@ -196,13 +221,19 @@ int makeRandom(int lower, int upper)
 // -------Measure Functions ----------
 void sampleIR()
 {
-    
     int i;
-
     for (i = 0; i < SAMPLE_SIZE; i++){
         sampledIR[i] = getIRVal();
     }
 
+}
+
+void sampleR()
+{
+    int i;
+    for (i = 0; i < SAMPLE_SIZE; i++){
+        sampledR[i] = getRVal();
+    }
 }
 
 void IR_ON()

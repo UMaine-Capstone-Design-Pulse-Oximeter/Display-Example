@@ -36,6 +36,9 @@ CMakeFiles/blink.dir/main.c.obj: \
  c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\sys\_locale.h \
  c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\strings.h \
  c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\sys\string.h \
+ c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\time.h \
+ c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\machine\time.h \
+ c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\math.h \
  C:\VSARM\sdk\pico\pico-sdk\src\common\pico_stdlib\include/pico/stdlib.h \
  C:\VSARM\sdk\pico\pico-sdk\src\common\pico_base\include/pico.h \
  C:\VSARM\sdk\pico\pico-sdk\src\common\pico_base\include/pico/types.h \

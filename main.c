@@ -14,6 +14,10 @@
 
 #define SAMPLE_SIZE 10
 
+#define SSD1306_WRITE_ADDRESS 0x3C
+#define DAC7574_WRITE_ADDRESS 0x4c
+#define IDK_ADDRESS 0x48
+
 
 int sampledIR[SAMPLE_SIZE];
 int ACDC_IR[2];
@@ -41,13 +45,16 @@ int main() {
     printf("configuring pins...\n");
     setup_gpios();
 
+    //Ports
+    i2c_inst_t *i2c = i2c1;
+
     //test for ACDC function
     //mathRoutine();
 
     //Initilize Display
     ssd1306_t disp;
     disp.external_vcc=false;
-    ssd1306_init(&disp, 128, 64, 0x3C, i2c1);
+    ssd1306_init(&disp, 128, 64, SSD1306_WRITE_ADDRESS, i2c1);
     ssd1306_clear(&disp);
 
     double R = 0;
@@ -97,8 +104,7 @@ int main() {
 
     return 0;
 }
-// 18 19
-// 2 3
+
 
 void setup_gpios(void) {
 
@@ -108,11 +114,13 @@ void setup_gpios(void) {
     gpio_set_dir(LED_PIN, GPIO_OUT); 
 
     //Setup Display GPIO
+    // 18 19 for custom board
+    // 2 3 for dev board
     i2c_init(i2c1, 400000);
-    gpio_set_function(2, GPIO_FUNC_I2C);
-    gpio_set_function(3, GPIO_FUNC_I2C);
-    gpio_pull_up(2);
-    gpio_pull_up(3);
+    gpio_set_function(18, GPIO_FUNC_I2C);
+    gpio_set_function(19, GPIO_FUNC_I2C);
+    gpio_pull_up(18);
+    gpio_pull_up(19);
 }
 
 
@@ -289,3 +297,6 @@ int getRVal(void) //find the insensity of RED
     R_OFF();
     return R_VAL;
 }
+
+//--------------DAC I2C Functions---------------
+//int reg_write()

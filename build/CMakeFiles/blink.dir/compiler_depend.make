@@ -1362,6 +1362,49 @@ CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.c.obj
   C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
   C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h
 
+CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c \
+  C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico/assert.h \
+  C:/VSARM/armcc/10\ 2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/assert.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/_ansi.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/newlib.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/_newlib_version.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/config.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/machine/ieeefp.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/features.h \
+  C:/VSARM/armcc/10\ 2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/stdint.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/machine/_default_types.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/_intsup.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/_stdint.h \
+  C:/VSARM/armcc/10\ 2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h \
+  generated/pico_base/pico/version.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico/config.h \
+  generated/pico_base/pico/config_autogen.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/boards/include/boards/pico.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/cdefs.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico/error.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/include/hardware/adc.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/adc.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/adc.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h
+
 CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c \
   C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/include/hardware/claim.h \
   C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico.h \
@@ -2838,6 +2881,9 @@ CMakeFiles/blink.dir/main.c.obj: ../main.c \
   C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/sched.h \
   C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/machine/types.h \
   C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/stdio.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/stdlib.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/machine/stdlib.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/alloca.h \
   C:/VSARM/armcc/10\ 2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
   C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/stdint.h \
   C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/_intsup.h \
@@ -2845,6 +2891,9 @@ CMakeFiles/blink.dir/main.c.obj: ../main.c \
   C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/_locale.h \
   C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/strings.h \
   C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/sys/string.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/time.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/machine/time.h \
+  C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/math.h \
   C:/VSARM/sdk/pico/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
   C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico.h \
   C:/VSARM/sdk/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
@@ -2878,6 +2927,9 @@ CMakeFiles/blink.dir/main.c.obj: ../main.c \
   C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
   C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
   C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/include/hardware/adc.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/adc.h \
+  C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/adc.h \
   C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
   C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
   C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
@@ -3263,6 +3315,24 @@ C:/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.c:
 
 C:/VSARM/sdk/pico/pico-sdk/src/common/pico_util/include/pico/util/queue.h:
 
+C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c:
+
+C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/os_defines.h:
+
+C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/include/hardware/adc.h:
+
+C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/adc.h:
+
+C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/adc.h:
+
+C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h:
+
+C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h:
+
+C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h:
+
+C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h:
+
 C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio/driver.h:
 
 C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c:
@@ -3302,14 +3372,6 @@ C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_xosc/include/hardware/xosc.h:
 C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/xosc.h:
 
 C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/xosc.h:
-
-C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h:
-
-C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h:
-
-C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h:
-
-C:/VSARM/sdk/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h:
 
 C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c:
 
@@ -3397,8 +3459,6 @@ C:/VSARM/sdk/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/
 
 C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/boot_stage2/include/boot_stage2/config.h:
 
-C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/os_defines.h:
-
 C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/cpu_defines.h:
 
 C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/c++/10.3.1/pstl/pstl_config.h:
@@ -3420,6 +3480,10 @@ C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c:
 C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c:
 
 ../main.c:
+
+C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/time.h:
+
+C:/VSARM/armcc/10\ 2021.10/arm-none-eabi/include/machine/time.h:
 
 ../ssd1306.h:
 

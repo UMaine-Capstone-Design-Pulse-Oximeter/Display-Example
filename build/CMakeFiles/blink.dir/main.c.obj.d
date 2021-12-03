@@ -29,6 +29,9 @@ CMakeFiles/blink.dir/main.c.obj: \
  c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\sys\sched.h \
  c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\machine\types.h \
  c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\sys\stdio.h \
+ c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\stdlib.h \
+ c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\machine\stdlib.h \
+ c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\alloca.h \
  c:\vsarm\armcc\102021~1.10\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
  c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\stdint.h \
  c:\vsarm\armcc\102021~1.10\arm-none-eabi\include\sys\_intsup.h \
@@ -72,6 +75,9 @@ CMakeFiles/blink.dir/main.c.obj: \
  C:\VSARM\sdk\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/uart.h \
  C:\VSARM\sdk\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/dreq.h \
  C:\VSARM\sdk\pico\pico-sdk\src\rp2_common\pico_stdio_usb\include/pico/stdio_usb.h \
+ C:\VSARM\sdk\pico\pico-sdk\src\rp2_common\hardware_adc\include/hardware/adc.h \
+ C:\VSARM\sdk\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/adc.h \
+ C:\VSARM\sdk\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/adc.h \
  C:\VSARM\sdk\pico\pico-sdk\src\rp2_common\hardware_i2c\include/hardware/i2c.h \
  C:\VSARM\sdk\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/i2c.h \
  C:\VSARM\sdk\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/i2c.h \

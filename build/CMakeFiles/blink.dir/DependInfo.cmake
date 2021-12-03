@@ -116,6 +116,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_flash/include"
   "C:/VSARM/sdk/pico/pico-sdk/src/common/pico_usb_reset_interface/include"
   "C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_i2c/include"
+  "C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/include"
   )
 
 # The set of dependency files which are needed:
@@ -147,6 +148,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/VSARM/sdk/pico/pico-sdk/src/common/pico_util/datetime.c" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/datetime.c.obj" "gcc" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/datetime.c.obj.d"
   "C:/VSARM/sdk/pico/pico-sdk/src/common/pico_util/pheap.c" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/pheap.c.obj" "gcc" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/pheap.c.obj.d"
   "C:/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.c" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.c.obj" "gcc" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.c.obj.d"
+  "C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj" "gcc" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj.d"
   "C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj" "gcc" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj.d"
   "C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj" "gcc" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj.d"
   "C:/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj" "gcc" "CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj.d"

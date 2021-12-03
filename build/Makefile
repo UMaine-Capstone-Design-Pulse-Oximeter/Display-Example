@@ -828,6 +828,30 @@ C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\blink.dir\build.make CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.c.s
 .PHONY : C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.c.s
 
+C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.obj: C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+.PHONY : C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.obj
+
+# target to build an object file
+C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\blink.dir\build.make CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+.PHONY : C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+
+C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.i: C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
+.PHONY : C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.i
+
+# target to preprocess a source file
+C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\blink.dir\build.make CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
+.PHONY : C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
+
+C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.s: C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
+.PHONY : C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.s
+
+# target to generate assembly for a file
+C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\blink.dir\build.make CMakeFiles/blink.dir/C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
+.PHONY : C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
+
 C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj: C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 .PHONY : C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj
 
@@ -1802,6 +1826,9 @@ help:
 	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.obj
 	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.i
 	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/common/pico_util/queue.s
+	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.obj
+	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.i
+	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_adc/adc.s
 	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj
 	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.i
 	@echo ... C_/VSARM/sdk/pico/pico-sdk/src/rp2_common/hardware_claim/claim.s

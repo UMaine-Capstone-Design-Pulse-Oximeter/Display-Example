@@ -9,14 +9,21 @@
 #include "hardware/gpio.h"
 #include "hardware/adc.h"
 
+#include "sys_fn.h"
+#include "sys_i2c.h"
+#include "sys_time.h"
+#include "dev_mcp4728.h"
+
 #include "ssd1306.h"
 
 #define SLEEPTIME 25
 
 #define LED_PIN 25
 
-#define SAMPLE_SIZE 10
+#define SAMPLE_SIZE 100
 #define SAMPLE_SIZE_ROLL_AVG 20
+
+#define SAMPLE_WAIT 1
 
 #define SSD1306_WRITE_ADDRESS 0x3C
 #define DAC7574_WRITE_ADDRESS 0x4c
@@ -27,14 +34,14 @@
 //Setup Display GPIO Pins
 // 18 19 for custom board
 // 2 3 for dev board
-const uint display_sda_pin = 2;
-const uint display_scl_pin = 3;
+const uint display_sda_pin = 18;
+const uint display_scl_pin = 19;
 const uint red_led_pin = 16;
 const uint ir_led_pin = 17;
 
 static const int cal_f_a = 0;
-static const int cal_f_b = 100;
-static const int cal_f_c = 0;
+static const int cal_f_b = 40;
+static const int cal_f_c = 77;
 
 
 int sampledIR[SAMPLE_SIZE];
@@ -43,6 +50,7 @@ int sampledR[SAMPLE_SIZE];
 int ACDC_R[2];
 
 float spO2_avg_arr[SAMPLE_SIZE_ROLL_AVG];
+float spO2_avg_arr_temp[SAMPLE_SIZE_ROLL_AVG];
 
 void setup_gpios(void);
 void sampleIR();
@@ -59,6 +67,7 @@ int getRVal(void);
 int main() {
     //Initilize Serial port
     stdio_init_all();
+
     //Sleep to wait for user to load serial moniter
     sleep_ms(10000);
     //Setup display and onboard led variables
@@ -79,6 +88,8 @@ int main() {
 
     //Initilize spO2 average
     float spO2_avg  = 0;
+
+    int i;
 
     for(int i = 0; i < SAMPLE_SIZE_ROLL_AVG; i++){
         spO2_avg_arr[i] = 0;
@@ -108,9 +119,18 @@ int main() {
         spO2 = find_spO2(ACDC_IR[0],ACDC_IR[1],ACDC_R[0],ACDC_R[1]);
         printf("Calculated SpO2 Value %f \n", spO2);
 
+        for (i = 0; i < SAMPLE_SIZE_ROLL_AVG - 1; i++){
+            spO2_avg_arr[i] = spO2_avg_arr[i+1];
+        }
+        spO2_avg_arr[SAMPLE_SIZE_ROLL_AVG-1] = spO2;
+
+        
+
         //Update the spO2 rolling average array
-        update_spO2(spO2);
+        //update_spO2(spO2);
         printfloatArray(spO2_avg_arr,SAMPLE_SIZE_ROLL_AVG);
+
+
 
         //Calculate the rollig average
         float sum = 0;
@@ -121,12 +141,10 @@ int main() {
 
     
 
-
-
         printf("jumping to animation...\n");
         char buffer[15];
         
-        snprintf(buffer,15,"%.2f",spO2_avg);
+        snprintf(buffer,15,"%.0f",spO2_avg);
         ssd1306_draw_string(&disp, 8, 24, 2, buffer);
         ssd1306_show(&disp);
         ssd1306_clear(&disp);
@@ -225,7 +243,7 @@ float find_spO2(int AC_IR, int DC_IR, int AC_R, int DC_R) // Find the R value
     float denominator = (float) AC_IR / DC_IR;
     float R = numerator / denominator;
 
-    float spO2 = 100 * ( (cal_f_a*cal_f_a*R) + (cal_f_b*R) + (cal_f_c));
+    float spO2 = ( (cal_f_a*R*R) + (cal_f_b*R) + (cal_f_c));
     return spO2;
 }
 
@@ -239,12 +257,17 @@ void update_spO2(float spO2){
 
     spO2_avg_temp[SAMPLE_SIZE_ROLL_AVG] = spO2;
 
+    printf("print temp array");
+    printfloatArray(spO2_avg_temp,SAMPLE_SIZE_ROLL_AVG);
+
     for(int i = 0; i < SAMPLE_SIZE_ROLL_AVG; i++){
         spO2_avg_arr[i] = spO2_avg_temp[i];
     }
 
    
 }
+
+
 
 float rmsValue(int arr[], int n) //find the RMS value given an arry of intigers
 {
@@ -325,32 +348,36 @@ void sampleR()
 
 void IR_ON()
 {
-    gpio_put(LED_PIN, 1);
+    gpio_put(ir_led_pin, 1);
+    gpio_put(red_led_pin,0);
     //printf("IR on\n");
 }
 void IR_OFF()
 {
-    gpio_put(LED_PIN, 0);
+    gpio_put(ir_led_pin, 0);
+    gpio_put(red_led_pin,0);
     //printf("IR off\n");
 }
 void R_ON()
 {
-    gpio_put(LED_PIN, 1);
+    gpio_put(red_led_pin, 1);
+    gpio_put(ir_led_pin,0);
     //printf("RED on\n");
 }
 void R_OFF()
 {
-    gpio_put(LED_PIN, 0);
+    gpio_put(red_led_pin, 0);
+    gpio_put(ir_led_pin,0);
     //printf("RED off\n");
 }
 
 int getIRVal(void) //find the intesity of IR
 { 
     IR_ON(); //turn on IR LED
-    busy_wait_ms(10);
+    busy_wait_ms(SAMPLE_WAIT);
     int IR_VAL = adc_read(); //read value
     //int IR_VAL = makeRandom(1,100); //Dummy value to represent a reading
-    busy_wait_ms(10);
+    busy_wait_ms(SAMPLE_WAIT);
     IR_OFF(); //IR LED OFF
     return IR_VAL;
 }
@@ -358,10 +385,10 @@ int getIRVal(void) //find the intesity of IR
 int getAVal(void) //find the intesity of Ambient
 { 
     IR_OFF(); //IR LED OFF
-    busy_wait_ms(10);
-    //int A_VAL = adc_read(); //read value
-    int A_VAL = makeRandom(1,100); //Dummy value to represent a reading
-    busy_wait_ms(10);
+    busy_wait_ms(SAMPLE_WAIT);
+    int A_VAL = adc_read(); //read value
+    //int A_VAL = makeRandom(1,100); //Dummy value to represent a reading
+    busy_wait_ms(SAMPLE_WAIT);
     
     return A_VAL;
 }
@@ -369,10 +396,10 @@ int getAVal(void) //find the intesity of Ambient
 int getRVal(void) //find the insensity of RED
 { 
     R_ON(); //turn 
-    busy_wait_ms(10);
-    //int R_VAL = adc_read(); //read value
-    int R_VAL = makeRandom(1,100); //Dummy value to represent a reading
-    busy_wait_ms(10);
+    busy_wait_ms(SAMPLE_WAIT);
+    int R_VAL = adc_read(); //read value
+    //int R_VAL = makeRandom(1,100); //Dummy value to represent a reading
+    busy_wait_ms(SAMPLE_WAIT);
     R_OFF();
     return R_VAL;
 }

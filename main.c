@@ -40,28 +40,35 @@ const uint ir_led_pin = 17;
 
 //Calibration constats for spO2 calculation
 static const int cal_f_a = 0;
-static const int cal_f_b = 40;
-static const int cal_f_c = 77;
+static const int cal_f_b = 37;
+static const int cal_f_c = 59;
 
-//Global variables to hold AC/DC RED and IR values
-int sampledIR[SAMPLE_SIZE];
-int ACDC_IR[2];
-int sampledR[SAMPLE_SIZE];
-int ACDC_R[2];
+struct Light {
+  int sampledIR[SAMPLE_SIZE];
+  int ACDC_IR_AC;
+  int ACDC_IR_DC;
+  
+  int sampledR[SAMPLE_SIZE];
+  int ACDC_R_AC;
+  int ACDC_R_DC;
+};
 
-float spO2_avg_arr[SAMPLE_SIZE_ROLL_AVG];
-float spO2_avg_arr_temp[SAMPLE_SIZE_ROLL_AVG];
+
 
 void setup_gpios(void);
 
-void sampleIR();
-void sampleR();
+void sampleIR(struct Light *a1);
+void sampleR(struct Light *a1);
 
 void printArray(int arr[], int n);
 void printfloatArray(float arr[], int n);
 
-void getACDC(int arr[], int n, int color);
-float find_spO2(int AC_IR, int DC_IR, int AC_R, int DC_R);
+void displayACDC(struct Light *a1);
+void display_sampled(struct Light *a1,int n);
+
+void getACDC(struct Light *a1);
+
+float find_spO2(struct Light *a1);
 
 int getIRVal(void);
 int getRVal(void);
@@ -69,6 +76,13 @@ int getRVal(void);
 
 
 int main() {
+
+    float spO2_avg_arr[SAMPLE_SIZE_ROLL_AVG];
+    float spO2_avg_arr_temp[SAMPLE_SIZE_ROLL_AVG];
+
+    struct Light A = { {18,6,39,7,95,66,57,26,33,26}, 0, 0, {45,92,18,89,53,46,91,66,83,90}, 0, 0 };
+
+
     //Initialize Serial port
     stdio_init_all();
 
@@ -103,27 +117,20 @@ int main() {
     while (true)
     {
         //Sample R and IR
-        sampleIR();
-        sampleR();
+        sampleIR(&A);
+        sampleR(&A);
 
         //Print Sampled IR and RED Values to Serial Moniter
-        printf("Sampled IR Values\n");
-        printArray(sampledIR,SAMPLE_SIZE);
-        printf("Sampled RED Values\n");
-        printArray(sampledR,SAMPLE_SIZE);
+        display_sampled(&A,SAMPLE_SIZE);
 
         //Calculate ACDC
-        getACDC(sampledIR,SAMPLE_SIZE,1);
-        getACDC(sampledR,SAMPLE_SIZE,0);
+        getACDC(&A);
 
         //Print AC/DC IR and RED Values to Serial Moniter
-        printf("AC DC IR Values\n");
-        printArray(ACDC_IR,2);
-        printf("AC DC RED Values\n");
-        printArray(ACDC_R,2);
+        displayACDC(&A);
 
         //Calculate spO2 and Print to Serial Moniter
-        spO2 = find_spO2(ACDC_IR[0],ACDC_IR[1],ACDC_R[0],ACDC_R[1]);
+        spO2 = find_spO2(&A);
         printf("Calculated SpO2 Value %f \n", spO2);
 
         //Update the spO2 rolling average array
@@ -200,61 +207,47 @@ void animationUpdate(char word[]) //Write a string to display
 
 
 //--------- Math Functions ---------------
-void getACDC(int arr[], int n, int color) //find AC (max -min) and DC (min) values in an array
+void getACDC(struct Light *a1) 
 {
-    static int r[2];
+
+    int n = SAMPLE_SIZE;
     int i;
 
-    int max = arr[0];
-    int min = arr[0];
-    
+    int maxIR = a1->sampledIR[0];
+    int minIR = a1->sampledIR[0];
+
+    int maxR = a1->sampledR[0];
+    int minR = a1->sampledR[0];
+  
     for (i = 1; i < n; i++){
-      if (arr[i] > max)
-          max = arr[i];
-      if (arr[i] < min)
-          min = arr[i];
+      if (a1->sampledIR[i] > maxIR)
+          maxIR = a1->sampledIR[i];
+      if (a1->sampledIR[i] < minIR)
+          minIR = a1->sampledIR[i];
+      
+      if (a1->sampledR[i] > maxR)
+          maxR = a1->sampledR[i];
+      if (a1->sampledR[i] < minR)
+          minR = a1->sampledR[i];
     }
 
-    r[0] = max - min;
-    r[1] = min;
-    
-    if(color){
-        ACDC_IR[0] = r[0];
-        ACDC_IR[1] = r[1];
-    } else{
-        ACDC_R[0] = r[0];
-        ACDC_R[1] = r[1];
-    }
+    a1->ACDC_IR_AC = maxIR - minIR;
+    a1->ACDC_IR_DC = minIR;
+
+    a1->ACDC_R_AC = maxR - minR;
+    a1->ACDC_R_DC = minR;
 }
 
 
-float find_spO2(int AC_IR, int DC_IR, int AC_R, int DC_R) // Find the R value
-{
-    float numerator = (float) AC_R / DC_R;
-    float denominator = (float) AC_IR / DC_IR;
+float find_spO2(struct Light *a1){
+    float numerator = (float) a1->ACDC_R_AC / a1->ACDC_R_DC;
+    float denominator = (float) a1->ACDC_IR_AC / a1->ACDC_IR_DC;
     float R = numerator / denominator;
 
     float spO2 = ( (cal_f_a*R*R) + (cal_f_b*R) + (cal_f_c));
     return spO2;
 }
 
-
-void mathRoutine() //Display ACDC of a dummy int array
-
-{
-    //Dummy array to hold sampled values
-    int arr[] = {604, 636, 763, 452, 864, 969, 29, 262, 910, 941, 142, 745, 102, 218, 309, 616, 613, 594, 419, 917, 487, 539, 230, 929, 275, 662, 270, 114, 479, 670, 640, 726, 887, 559, 973, 983, 895, 754, 720, 432, 360, 112, 397, 669, 172, 694, 888, 566, 696, 666, 409, 290, 810, 374, 851, 779, 780, 939, 653, 667, 959, 388, 556, 971, 956, 503, 189, 731, 963, 809, 862, 173, 383, 120, 404, 992, 744, 161, 260, 537, 416, 312, 522, 254, 289, 258, 575, 131, 947, 330, 894, 264, 504, 69, 512, 347, 174, 447, 40, 836};
-    //Pointer to pass by refernce the results of get ACDC
-    int *p;
-    //Size of array used in arrary processing
-    int n = sizeof(arr)/sizeof(arr[0]);
-
-    //Store AC DC to p
-    getACDC(arr,n,1);
-
-    //print array p
-    printArray(p,2);
-}
 
 //Utility Function prints initger array
 void printArray(int arr[], int n)
@@ -276,6 +269,36 @@ void printfloatArray(float arr[], int n)
     printf("]\n");
 }
 
+
+
+
+void displayACDC(struct Light *a1){
+  printf("Sampled IR First Value: %d\n",a1->sampledIR[0]);
+  printf("ACDC_IR_AC: %d  ",a1->ACDC_IR_AC);
+  printf("ACDC_IR_DC: %d\n",a1->ACDC_IR_DC);
+  printf("ACDC_R_AC: %d   ",a1->ACDC_R_AC);
+  printf("ACDC_R_DC: %d\n",a1->ACDC_R_DC);
+  
+}
+
+
+void display_sampled(struct Light *a1,int n)
+{   
+    printf("Sampled IR Values: [");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a1->sampledIR[i]);
+    }
+    printf("]\n");
+
+    printf("Sampled RED Values: [");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a1->sampledR[i]);
+    }
+    printf("]\n");
+}
+
+
+
 //Utility Function makes random initiger, was used in development to simulate DAC sample
 int makeRandom(int lower, int upper)
 {
@@ -283,20 +306,20 @@ int makeRandom(int lower, int upper)
     return num;
 }
 // -------Measure Functions ----------
-void sampleIR()
+void sampleIR(struct Light *a1)
 {
     int i;
     for (i = 0; i < SAMPLE_SIZE; i++){
-        sampledIR[i] = getIRVal();
+        a1->sampledIR[i] = getIRVal();
     }
 
 }
 
-void sampleR()
+void sampleR(struct Light *a1)
 {
     int i;
     for (i = 0; i < SAMPLE_SIZE; i++){
-        sampledR[i] = getRVal();
+        a1->sampledR[i] = getRVal();
     }
 }
 

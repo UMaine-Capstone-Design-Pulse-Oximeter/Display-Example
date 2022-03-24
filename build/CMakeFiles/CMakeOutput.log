@@ -1,7 +1,7 @@
 The target system is: PICO -  - cortex-m0plus
-The host system is: Windows - 10.0.19042 - AMD64
+The host system is: Windows - 10.0.19044 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: C:/VSARM/armcc/10 2021.10/bin/arm-none-eabi-gcc.exe 
+Compiler: C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.07/bin/arm-none-eabi-gcc.exe 
 Build flags: ;-mcpu=cortex-m0plus;-mthumb
 Id flags: -c 
 
@@ -14,7 +14,7 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 The C compiler identification is GNU, found in "C:/Users/riley/Documents/Umaine_Capstone_Design_Pulse_Oximiter/Display-Example/build/CMakeFiles/3.22.0-rc2/CompilerIdC/CMakeCCompilerId.o"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: C:/VSARM/armcc/10 2021.10/bin/arm-none-eabi-g++.exe 
+Compiler: C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.07/bin/arm-none-eabi-g++.exe 
 Build flags: ;-mcpu=cortex-m0plus;-mthumb
 Id flags: -c 
 
